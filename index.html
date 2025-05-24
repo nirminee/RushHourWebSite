@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rush Hour - Accueil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(120deg, #232526 0%, #414345 100%);
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+    }
+    nav a {
+      background: #ffe066;
+      color: #c00;
+      font-family: 'Orbitron', Arial, sans-serif;
+      font-size: 1.1em;
+      padding: 14px 28px;
+      border-radius: 18px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 3px solid #c00;
+      transition: .2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    nav a.active, nav a:hover {
+      background: #c00;
+      color: #fff;
+      transform: scale(1.08) rotate(-2deg);
+    }
+    h1 {
+      text-align: center;
+      font-family: 'Orbitron', Arial, sans-serif;
+      color: #ffe066;
+      margin-top: 40px;
+      text-shadow: 0 0 12px #c00, 0 0 24px #2a5298;
+      letter-spacing: 2px;
+      font-size: 2.3em;
+    }
+    .start-line {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 70px;
+      margin-bottom: 30px;
+    }
+    .car-svg {
+      width: 130px;
+      height: 70px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      filter: drop-shadow(0 2px 12px #ffe06699);
+      transition: .3s;
+    }
+    .car-svg:active {
+      transform: translateX(50px) scale(1.12) rotate(-6deg);
+      filter: drop-shadow(0 6px 18px #c00bbd);
+    }
+    .start-bar {
+      width: 220px;
+      height: 16px;
+      background: repeating-linear-gradient(90deg, #fff 0 22px, #222 22px 44px);
+      border-radius: 8px;
+      box-shadow: 0 2px 12px #2227;
+      margin-bottom: 18px;
+      margin-top: 10px;
+      border: 3px solid #ffe066;
+    }
+    .slogan {
+      color: #fff;
+      text-align: center;
+      font-size: 1.15em;
+      margin-bottom: 40px;
+      margin-top: 10px;
+      letter-spacing: 1px;
+    }
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin: 40px auto 0 auto;
+      max-width: 900px;
+      flex-wrap: wrap;
+    }
+    .feature-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+      padding: 28px 24px;
+      text-align: center;
+      width: 240px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      margin-bottom: 24px;
+    }
+    .feature-card:hover {
+      transform: scale(1.05) rotate(-1deg);
+      box-shadow: 0 8px 32px rgba(42,82,152,0.16);
+    }
+    .feature-card .icon {
+      font-size: 2.5em;
+      display: block;
+      margin-bottom: 12px;
+    }
+    .feature-card h2 {
+      font-family: 'Orbitron', Arial, sans-serif;
+      font-size: 1.3em;
+      color: #c00;
+      margin-bottom: 0.4em;
+    }
+    .feature-card p {
+      color: #444;
+      font-size: 1.05em;
+    }
+    footer {
+      background: #2a5298;
+      color: #fff;
+      text-align: center;
+      padding: 18px 0;
+      margin-top: 80px;
+      font-size: 1em;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+   <nav>
+    <a href="index.html"  class="active">🏁 Accueil</a>
+    <a href="equipe.html">👥 Équipe</a>
+    <a href="travail.html">🔧 Travail</a>
+    <a href="regles.html">📋 Règles</a>
+    <a href="astuces.html" >✨ Astuces de Pro</a>
+  </nav>
+  <h1>Rush Hour – Ligne de départ</h1>
+  <div class="start-line">
+    <svg class="car-svg" onclick="vroum()" viewBox="0 0 120 60">
+      <rect x="20" y="22" width="80" height="20" rx="10" fill="#c00"/>
+      <circle cx="38" cy="49" r="9" fill="#ffe066" stroke="#222" stroke-width="3"/>
+      <circle cx="82" cy="49" r="9" fill="#ffe066" stroke="#222" stroke-width="3"/>
+      <rect x="45" y="13" width="30" height="12" rx="6" fill="#fff"/>
+      <text x="60" y="37" font-size="20" fill="#fff" text-anchor="middle" font-family="Orbitron">RH</text>
+    </svg>
+    <div class="start-bar"></div>
+    <div class="slogan">Clique sur la voiture pour la faire démarrer !</div>
+  </div>
+  <section class="features">
+    <div class="feature-card">
+      <span class="icon">🎮</span>
+      <h2>Jeu Manuel</h2>
+      <p>Déplace les véhicules et libère la voiture rouge !</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🤖</span>
+      <h2>Mode IA</h2>
+      <p>Laisse l’intelligence artificielle résoudre le puzzle.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🛠️</span>
+      <h2>Niveaux Personnalisés</h2>
+      <p>Crée et partage tes propres défis !</p>
+    </div>
+  </section>
+  <footer>
+    © 2025 Rush Hour Project - Tous droits réservés
+  </footer>
+  <audio id="vroum" src="https://cdn.pixabay.com/audio/2022/07/26/audio_124bfa8b1d.mp3"></audio>
+  <script>
+    function vroum() {
+      const sound = document.getElementById('vroum');
+      sound.currentTime = 0;
+      sound.play();
+    }
+  </script>
+</body>
+</html>

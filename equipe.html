@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rush Hour - Notre équipe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(120deg, #232526 0%, #414345 100%);
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+    }
+    nav a {
+      background: #ffe066;
+      color: #c00;
+      font-family: 'Orbitron', Arial, sans-serif;
+      font-size: 1.1em;
+      padding: 14px 28px;
+      border-radius: 18px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 3px solid #c00;
+      transition: .2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    nav a.active, nav a:hover {
+      background: #c00;
+      color: #fff;
+      transform: scale(1.08) rotate(-2deg);
+    }
+    h1 {
+      text-align: center;
+      font-family: 'Orbitron', Arial, sans-serif;
+      color: #ffe066;
+      margin-top: 40px;
+      text-shadow: 0 0 12px #c00, 0 0 24px #2a5298;
+      letter-spacing: 2px;
+      font-size: 2.3em;
+    }
+    .intro-team {
+      text-align: center;
+      color: #fff;
+      font-size: 1.2em;
+      margin: 30px 0 40px 0;
+      background: linear-gradient(90deg, #ffe06633 60%, #fff1 100%);
+      border-radius: 14px;
+      padding: 18px 14px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 2px 16px #ffe06622;
+    }
+    .garage {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin: 40px auto 0 auto;
+      max-width: 900px;
+      flex-wrap: wrap;
+    }
+    .stand {
+      background: linear-gradient(120deg, #232526 0%, #2a5298 100%);
+      border-radius: 22px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+      padding: 38px 24px 24px 24px;
+      text-align: center;
+      width: 260px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 30px;
+      transition: transform .2s, box-shadow .2s;
+      animation: popin .8s;
+    }
+    @keyframes popin { from{opacity:0;transform:scale(.8);} to{opacity:1;transform:scale(1);} }
+    .stand:hover {
+      transform: scale(1.07) rotate(-2deg);
+      box-shadow: 0 8px 40px #ffe06655;
+    }
+    .car-svg {
+      width: 110px;
+      height: 60px;
+      margin-bottom: 16px;
+      transition: .3s;
+      filter: drop-shadow(0 2px 12px #ffe06699);
+      cursor: pointer;
+    }
+    .stand:hover .car-svg {
+      transform: translateY(-10px) scale(1.12) rotate(-6deg);
+      filter: drop-shadow(0 6px 18px #c00bbd);
+    }
+    .prenom {
+      font-family: 'Orbitron', Arial, sans-serif;
+      font-size: 1.4em;
+      color: #ffe066;
+      text-shadow: 0 0 8px #c00, 0 0 16px #ffe066;
+      margin-bottom: 6px;
+      letter-spacing: 2px;
+      animation: neon 1.8s infinite alternate;
+    }
+    @keyframes neon {
+      0% { text-shadow: 0 0 8px #c00, 0 0 16px #ffe066; }
+      100% { text-shadow: 0 0 24px #ffe066, 0 0 32px #c00; }
+    }
+    .role {
+      color: #fff;
+      background: #c00;
+      border-radius: 8px;
+      display: inline-block;
+      padding: 5px 16px;
+      font-weight: bold;
+      margin-bottom: 16px;
+      font-size: 1em;
+      box-shadow: 0 2px 8px #c00bbd44;
+    }
+    .desc {
+      color: #eee;
+      margin-top: 10px;
+      font-size: 1.05em;
+    }
+    .stand::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 12px;
+      background: repeating-linear-gradient(90deg,#ffe066 0 10px,transparent 10px 20px);
+      opacity: .6;
+    }
+    footer {
+      background: #2a5298;
+      color: #fff;
+      text-align: center;
+      padding: 18px 0;
+      margin-top: 80px;
+      font-size: 1em;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">🏁 Accueil</a>
+    <a href="equipe.html" class="active">👥 Équipe</a>
+    <a href="travail.html">🔧 Travail</a>
+    <a href="regles.html">📋 Règles</a>
+    <a href="astuces.html">✨ Astuces</a>
+  </nav>
+  <h1>Notre équipe</h1>
+  <div class="intro-team">
+    Deux passionnées de codage, prêtes à relever tous les défis pour libérer la voiture rouge !  
+    <br>Notre énergie : l’envie d’apprendre, d’innover et de s’amuser en programmant.
+  </div>
+  <div class="garage">
+    <div class="stand">
+      <svg class="car-svg" onclick="vroum()" viewBox="0 0 120 60">
+        <rect x="20" y="22" width="80" height="20" rx="10" fill="#c00"/>
+        <circle cx="38" cy="49" r="9" fill="#ffe066" stroke="#222" stroke-width="3"/>
+        <circle cx="82" cy="49" r="9" fill="#ffe066" stroke="#222" stroke-width="3"/>
+        <rect x="45" y="13" width="30" height="12" rx="6" fill="#fff"/>
+        <text x="60" y="37" font-size="20" fill="#fff" text-anchor="middle" font-family="Orbitron">F</text>
+      </svg>
+      <div class="prenom">Floura</div>
+      <div class="role">Développeuse Front</div>
+      <div class="desc">Créative et méticuleuse, Floura adore donner vie à l’interface et imaginer des animations qui rendent le jeu unique.</div>
+    </div>
+    <div class="stand">
+      <svg class="car-svg" onclick="vroum()" viewBox="0 0 120 60">
+        <rect x="20" y="22" width="80" height="20" rx="10" fill="#2a5298"/>
+        <circle cx="38" cy="49" r="9" fill="#ffe066" stroke="#222" stroke-width="3"/>
+        <circle cx="82" cy="49" r="9" fill="#ffe066" stroke="#222" stroke-width="3"/>
+        <rect x="45" y="13" width="30" height="12" rx="6" fill="#ffe066"/>
+        <text x="60" y="37" font-size="20" fill="#fff" text-anchor="middle" font-family="Orbitron">N</text>
+      </svg>
+      <div class="prenom">Nermine</div>
+      <div class="role">Développeuse Back</div>
+      <div class="desc">Logique et déterminée, Nermine aime résoudre les casse-têtes et coder des IA pour rendre le Rush Hour encore plus intelligent.</div>
+    </div>
+  </div>
+  <footer>
+    © 2025 Rush Hour Project - Tous droits réservés
+  </footer>
+  <audio id="vroum" src="https://cdn.pixabay.com/audio/2022/07/26/audio_124bfa8b1d.mp3"></audio>
+  <script>
+    function vroum() {
+      const sound = document.getElementById('vroum');
+      sound.currentTime = 0;
+      sound.play();
+    }
+  </script>
+</body>
+</html>

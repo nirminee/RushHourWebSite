@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rush Hour – Astuces de Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(120deg, #232526 0%, #414345 100%);
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+    }
+    nav a {
+      background: #ffe066;
+      color: #c00;
+      font-family: 'Orbitron', Arial, sans-serif;
+      font-size: 1.1em;
+      padding: 14px 28px;
+      border-radius: 18px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 3px solid #c00;
+      transition: .2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    nav a.active, nav a:hover {
+      background: #c00;
+      color: #fff;
+      transform: scale(1.08) rotate(-2deg);
+    }
+    h1 {
+      text-align: center;
+      font-family: 'Orbitron', Arial, sans-serif;
+      color: #ffe066;
+      margin-top: 40px;
+      text-shadow: 0 0 12px #c00, 0 0 24px #2a5298;
+      letter-spacing: 2px;
+      font-size: 2.3em;
+    }
+    .tips-container {
+      margin: 60px auto 0 auto;
+      max-width: 700px;
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+      padding: 38px 32px 32px 32px;
+      position: relative;
+    }
+    .tip {
+      background: linear-gradient(90deg,#ffe066 60%,#fff 100%);
+      border-radius: 12px;
+      color: #2a5298;
+      font-weight: bold;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.08em;
+      margin: 20px 0;
+      padding: 16px 20px;
+      box-shadow: 0 1px 8px #ffe06644;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      animation: tipflash 1.2s infinite alternate;
+    }
+    .tip .tipicon {
+      font-size: 1.6em;
+      margin-right: 8px;
+    }
+    @keyframes tipflash {
+      0% { opacity: 0.8;}
+      100% { opacity: 1;}
+    }
+    .return-btn {
+      display: inline-block;
+      margin: 40px auto 0 auto;
+      background: #c00;
+      color: #fff;
+      font-family: 'Orbitron', Arial, sans-serif;
+      font-size: 1.1em;
+      padding: 14px 32px;
+      border-radius: 18px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 3px solid #ffe066;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      text-align: center;
+    }
+    .return-btn:hover {
+      background: #ffe066;
+      color: #c00;
+      transform: scale(1.08) rotate(-2deg);
+    }
+    footer {
+      background: #2a5298;
+      color: #fff;
+      text-align: center;
+      padding: 18px 0;
+      margin-top: 80px;
+      font-size: 1em;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">🏁 Accueil</a>
+    <a href="equipe.html">👥 Équipe</a>
+    <a href="travail.html">🔧 Travail</a>
+    <a href="regles.html">📋 Règles</a>
+    <a href="astuces.html" class="active">✨ Astuces de Pro</a>
+  </nav>
+  <h1>✨ Astuces de Pro pour gagner à Rush Hour</h1>
+  <div class="tips-container">
+    <div class="tip"><span class="tipicon">🔍</span>Regarde toujours l’ensemble de la grille avant d’agir.</div>
+    <div class="tip"><span class="tipicon">🧠</span>Anticipe plusieurs coups à l’avance, pas seulement le prochain déplacement.</div>
+    <div class="tip"><span class="tipicon">🚧</span>Libère d’abord les véhicules qui bloquent directement la voiture rouge.</div>
+    <div class="tip"><span class="tipicon">🔁</span>Parfois, il faut reculer pour mieux avancer : n’hésite pas à faire des mouvements “temporaires”.</div>
+    <div class="tip"><span class="tipicon">⏳</span>Sois patient, certaines situations demandent de nombreux déplacements.</div>
+    <div class="tip"><span class="tipicon">🏆</span>Fais sortir la voiture rouge et célèbre ta victoire !</div>
+    <a class="return-btn" href="regles.html">← Retour aux règles</a>
+  </div>
+  <footer>
+    © 2025 Rush Hour Project - Tous droits réservés
+  </footer>
+</body>
+</html>
