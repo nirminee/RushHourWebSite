@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
   <title>Rush Hour – Règles du jeu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat&display=swap" type="text/css" rel="stylesheet">
   <style>
     body {
       background: linear-gradient(120deg, #232526 0%, #414345 100%);
@@ -39,15 +39,40 @@
       color: #fff;
       transform: scale(1.08) rotate(-2deg);
     }
-    h1 {
-      text-align: center;
-      font-family: 'Orbitron', Arial, sans-serif;
-      color: #ffe066;
-      margin-top: 40px;
-      text-shadow: 0 0 12px #c00, 0 0 24px #2a5298;
-      letter-spacing: 2px;
-      font-size: 2.3em;
-    }
+   h1 {
+  text-align: center;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 2.6em;
+  margin-top: 40px;
+  margin-bottom: 0;
+  position: relative;
+  color: #ffe066;
+  letter-spacing: 3px;
+  user-select: none;
+
+  /* Nouvelle animation d’arrivée en voiture */
+  animation: carArrival 3s ease forwards;
+}
+
+/* Animation "voiture qui arrive" */
+@keyframes carArrival {
+  0% {
+    transform: translateX(-150%) rotate(-15deg) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(20%) rotate(10deg) scale(1.1);
+    opacity: 1;
+  }
+  70% {
+    transform: translateX(-5%) rotate(-5deg) scale(1.05);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+}
+
     .circuit {
       margin: 60px auto 0 auto;
       max-width: 900px;
@@ -58,16 +83,28 @@
       position: relative;
       overflow: hidden;
     }
-    .circuit::before {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 0; right: 0; top: 0; height: 16px;
-      background: repeating-linear-gradient(90deg, #ffe066 0 24px, #c00 24px 48px);
-      border-top-left-radius: 22px;
-      border-top-right-radius: 22px;
-      opacity: 0.15;
-    }
+   .circuit::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0; right: 0; top: 0; height: 16px;
+  background: repeating-linear-gradient(90deg, #ffe066 0 24px, #c00 24px 48px);
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+  opacity: 0.15;
+  
+  animation: moveGradient 3s linear infinite;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 48px 0;
+  }
+}
+
     .steps-circuit {
       display: flex;
       flex-wrap: wrap;
@@ -206,7 +243,7 @@
     <a href="regles.html" class="active">📋 Règles</a>
     <a href="astuces.html">✨ Astuces de Pro</a>
   </nav>
-  <h1>Règles du jeu Rush Hour</h1>
+  <h1>📋 Règles du jeu Rush Hour</h1>
   <div class="circuit">
     <div class="steps-circuit">
       <div class="step-card">
@@ -273,3 +310,5 @@
   </footer>
 </body>
 </html>
+
+

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
   <title>Rush Hour - Accueil</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat&display=swap" type="text/css" rel="stylesheet">
   <style>
     body {
       background: linear-gradient(120deg, #232526 0%, #414345 100%);
@@ -12,6 +12,7 @@
       margin: 0;
       padding: 0;
       min-height: 100vh;
+      color: #fff;
     }
     nav {
       display: flex;
@@ -42,18 +43,41 @@
     h1 {
       text-align: center;
       font-family: 'Orbitron', Arial, sans-serif;
-      color: #ffe066;
+      font-weight: 900;
+      font-size: 2.6em;
       margin-top: 40px;
-      text-shadow: 0 0 12px #c00, 0 0 24px #2a5298;
-      letter-spacing: 2px;
-      font-size: 2.3em;
+      margin-bottom: 0;
+      position: relative;
+      color: #ffe066;
+      letter-spacing: 3px;
+      user-select: none;
+
+      /* Animation voiture qui arrive */
+      animation: carArrival 3s ease forwards;
+    }
+    @keyframes carArrival {
+      0% {
+        transform: translateX(-150%) rotate(-15deg) scale(0.8);
+        opacity: 0;
+      }
+      50% {
+        transform: translateX(20%) rotate(10deg) scale(1.1);
+        opacity: 1;
+      }
+      70% {
+        transform: translateX(-5%) rotate(-5deg) scale(1.05);
+      }
+      100% {
+        transform: translateX(0) rotate(0deg) scale(1);
+      }
     }
     .start-line {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 70px;
+      margin-top: 40px;
       margin-bottom: 30px;
+      position: relative;
     }
     .car-svg {
       width: 130px;
@@ -62,10 +86,30 @@
       cursor: pointer;
       filter: drop-shadow(0 2px 12px #ffe06699);
       transition: .3s;
+      position: relative;
+      z-index: 2;
+      animation: carDrive 4s ease-in-out infinite;
     }
     .car-svg:active {
       transform: translateX(50px) scale(1.12) rotate(-6deg);
       filter: drop-shadow(0 6px 18px #c00bbd);
+    }
+    @keyframes carDrive {
+      0% {
+        transform: translateX(-130%) scale(1) rotate(0deg);
+        filter: drop-shadow(0 2px 12px #ffe06699);
+        opacity: 0;
+      }
+      50% {
+        transform: translateX(0) scale(1.1) rotate(5deg);
+        filter: drop-shadow(0 4px 18px #ffcc33);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(-130%) scale(1) rotate(0deg);
+        filter: drop-shadow(0 2px 12px #ffe06699);
+        opacity: 0;
+      }
     }
     .start-bar {
       width: 220px;
@@ -76,6 +120,30 @@
       margin-bottom: 18px;
       margin-top: 10px;
       border: 3px solid #ffe066;
+      position: relative;
+      z-index: 1;
+    }
+    .start-line::after {
+      content: "";
+      display: block;
+      width: 220px;
+      height: 8px;
+      margin: 8px auto 0 auto;
+      border-radius: 4px;
+      background: linear-gradient(270deg, #ffe066, #ffae00, #ffe066);
+      background-size: 400% 100%;
+      animation: pulseLine 3s linear infinite;
+      filter: drop-shadow(0 0 6px #ffcc33);
+      position: relative;
+      z-index: 0;
+    }
+    @keyframes pulseLine {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 400% 50%;
+      }
     }
     .slogan {
       color: #fff;
@@ -136,16 +204,18 @@
   </style>
 </head>
 <body>
-   <nav>
+  <nav>
     <a href="index.html"  class="active">🏁 Accueil</a>
     <a href="equipe.html">👥 Équipe</a>
     <a href="travail.html">🔧 Travail</a>
     <a href="regles.html">📋 Règles</a>
     <a href="astuces.html" >✨ Astuces de Pro</a>
   </nav>
-  <h1>Rush Hour – Ligne de départ</h1>
+
+  <h1>🏁 Rush Hour – Ligne de départ</h1>
+
   <div class="start-line">
-    <svg class="car-svg" onclick="vroum()" viewBox="0 0 120 60">
+    <svg class="car-svg" onclick="vroum()" viewBox="0 0 120 60" aria-label="Voiture rouge Rush Hour" role="img">
       <rect x="20" y="22" width="80" height="20" rx="10" fill="#c00"/>
       <circle cx="38" cy="49" r="9" fill="#ffe066" stroke="#222" stroke-width="3"/>
       <circle cx="82" cy="49" r="9" fill="#ffe066" stroke="#222" stroke-width="3"/>
@@ -155,6 +225,7 @@
     <div class="start-bar"></div>
     <div class="slogan">Clique sur la voiture pour la faire démarrer !</div>
   </div>
+
   <section class="features">
     <div class="feature-card">
       <span class="icon">🎮</span>
@@ -172,9 +243,11 @@
       <p>Crée et partage tes propres défis !</p>
     </div>
   </section>
+
   <footer>
     © 2025 Rush Hour Project - Tous droits réservés
   </footer>
+
   <audio id="vroum" src="https://cdn.pixabay.com/audio/2022/07/26/audio_124bfa8b1d.mp3"></audio>
   <script>
     function vroum() {

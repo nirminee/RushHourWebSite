@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
   <title>Rush Hour – Astuces de Pro</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat&display=swap" type="text/css" rel="stylesheet">
   <style>
     body {
       background: linear-gradient(120deg, #232526 0%, #414345 100%);
@@ -40,14 +40,39 @@
       transform: scale(1.08) rotate(-2deg);
     }
     h1 {
-      text-align: center;
-      font-family: 'Orbitron', Arial, sans-serif;
-      color: #ffe066;
-      margin-top: 40px;
-      text-shadow: 0 0 12px #c00, 0 0 24px #2a5298;
-      letter-spacing: 2px;
-      font-size: 2.3em;
-    }
+  text-align: center;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 2.6em;
+  margin-top: 40px;
+  margin-bottom: 0;
+  position: relative;
+  color: #ffe066;
+  letter-spacing: 3px;
+  user-select: none;
+
+  /* Nouvelle animation d’arrivée en voiture */
+  animation: carArrival 3s ease forwards;
+}
+
+/* Animation "voiture qui arrive" */
+@keyframes carArrival {
+  0% {
+    transform: translateX(-150%) rotate(-15deg) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(20%) rotate(10deg) scale(1.1);
+    opacity: 1;
+  }
+  70% {
+    transform: translateX(-5%) rotate(-5deg) scale(1.05);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+}
+
     .tips-container {
       margin: 60px auto 0 auto;
       max-width: 700px;
